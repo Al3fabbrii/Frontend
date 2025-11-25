@@ -1,0 +1,29 @@
+.header {
+    background-color: white;
+    color: rgb(201, 30, 30);
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.Title {
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+mat-icon {
+    color: white;
+    font-weight: bold;
+}
+
+.MenuButton {
+    background-color: #336699;
+    border-color: #336699;
+    border-radius: 5px;
+}
+
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+}
