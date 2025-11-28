@@ -1,25 +1,23 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../core/models/product';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-product-card',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, MatCardModule, MatButtonModule],
   standalone: true,
-  template: `
-    <article class="card">
-      <h3>{{ product.title }}</h3>
-      <p>{{ product.price | currency: 'EUR': 'symbol': '1.2-2' }}</p>
-      <button (click)="addToCart(product)">Aggiungi</button>
-    </article>
-  `,
-  styles: ``,
+  templateUrl: `./product-card.html`,
+  styleUrls: [`./product-card.scss`],
 })
 
 export class ProductCard {
-    @Input({ required: true }) product!: Product;
-    @Output () add = new EventEmitter<Product>();
-    addToCart (p: Product) {this.add.emit (p); 
-  } 
+  @Input({ required: true }) product!: Product;
+  @Output() add = new EventEmitter<Product>();
+  addToCart(p: Product) {
+    this.add.emit(p);
+  }
 
 }
