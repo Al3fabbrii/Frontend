@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../../core/models/product';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-product-card',
-  imports: [CurrencyPipe, MatCardModule, MatButtonModule],
+  imports: [CurrencyPipe, MatCardModule, MatButtonModule, RouterModule],
   standalone: true,
   templateUrl: `./product-card.html`,
   styleUrls: [`./product-card.scss`],

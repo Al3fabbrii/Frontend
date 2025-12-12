@@ -8,7 +8,7 @@ import { Order } from '../models/order';
 })
 export class OrderService {
   http = inject(HttpClient);
-  private readonly baseUrl = 'http://localhost:3000/api';
+  private readonly baseUrl = 'http://localhost:3001/api';
 
   create(order: Order): Observable<Order> {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order);
