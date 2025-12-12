@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { CheckoutPage } from './features/checkout/checkout-page/checkout-page';
 import { checkoutGuardGuard } from './core/guard/checkout-guard-guard';
+import { ProductDetailPage } from './features/products/product-detail-page/product-detail-page';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'products', pathMatch: 'full' },
@@ -9,4 +10,5 @@ export const routes: Routes = [
             () => import('./features/products/product-page/product-page').then(m => m.ProductPage)
     },
     { path: 'checkout', component: CheckoutPage, canActivate: [checkoutGuardGuard] },
+    { path: 'product/:id', component: ProductDetailPage },
 ];

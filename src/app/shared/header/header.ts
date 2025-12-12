@@ -24,4 +24,9 @@ export class Header {
     this.router.navigate(['/']);
   }
 
+  goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
+
+
 }
