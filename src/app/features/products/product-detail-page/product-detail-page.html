@@ -6,12 +6,15 @@
         <mat-card-subtitle>
             @if (product.sale) {
             <span class="price-original">
+                Prezzo originale:
                 {{ product.originalPrice | currency:'EUR' }}
             </span>
             <span class="price-sale">
+                Prezzo scontato:
                 {{ product.price | currency:'EUR' }}
             </span>
             } @else {
+            Prezzo:
             {{ product.price | currency:'EUR' }}
             }
         </mat-card-subtitle>
