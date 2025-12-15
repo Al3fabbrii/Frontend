@@ -10,3 +10,10 @@
         margin-bottom: 1rem;
     }
 }
+
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}

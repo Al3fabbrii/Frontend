@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-product-detail-page',
   standalone: true,
   templateUrl: './product-detail-page.html',
+  styleUrls: ['./product-detail-page.scss'],
   imports: [RouterModule, NgIf, AsyncPipe, CurrencyPipe, MatCardModule, MatButtonModule],
 })
 
@@ -20,4 +21,9 @@ export class ProductDetailPage {
     map(params => params.get('id') as string),
     switchMap(id => this.svc.getById(id)),
   );
+
+  addToCart(product: Product) {
+    // Logica per aggiungere il prodotto al carrello
+    console.log(`Prodotto aggiunto al carrello: ${product.title}`);
+  }
 }

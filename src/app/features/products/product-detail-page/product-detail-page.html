@@ -19,13 +19,16 @@
             }
         </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="product.thumbnail" [alt]="product.title" />
+    <img mat-card-image [src]="product.thumbnail" [alt]="product.title" class="product-image" />
     <mat-card-content>
         <p>{{ product.description }}</p>
     </mat-card-content>
     <mat-card-actions>
         <button mat-raised-button color="primary" routerLink="/products">
             Torna al catalogo
+        </button>
+        <button mat-raised-button color="accent" (click)="addToCart(product)">
+            Aggiungi al carrello
         </button>
     </mat-card-actions>
 </mat-card>

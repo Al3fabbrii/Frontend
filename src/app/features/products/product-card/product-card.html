@@ -6,11 +6,12 @@
         <div class="title">{{product.title}}</div>
         <span>{{product.price | currency: 'EUR': 'symbol': '1.2-2'}}</span>
     </mat-card-content>
-    <mat-card-actions align="end">
+    <mat-card-actions>
         <button mat-flat-button color="primary" aria-label="Aggiungi al carrello" (click)="addToCart(product)">Aggiungi
             al carrello</button>
+        <button mat-flat-button color="primary" aria-label="Vai ai dettagli" [routerLink]="['/product', product.id]">
+            Dettagli
+        </button>
     </mat-card-actions>
-    <button mat-flat-button color="primary" aria-label="Vai ai dettagli" [routerLink]="['/product', product.id]">
-        Dettagli
-    </button>
+
 </mat-card>
