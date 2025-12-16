@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
+import { AuthService } from '../../core/services/auth-service';
 
 @Component({
   selector: 'app-header',
-  imports: [MatIcon, MatToolbar, MatButton, MatToolbarRow],
+  imports: [CommonModule, MatIcon, MatToolbar, MatButton, MatToolbarRow],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   private router = inject(Router);
+  authService = inject(AuthService);
 
   goToCheckout(): void {
     // Logic to navigate to the checkout page
@@ -28,5 +31,11 @@ export class Header {
     this.router.navigate(['/login']);
   }
 
-
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/products']);
+      }
+    });
+  }
 }
