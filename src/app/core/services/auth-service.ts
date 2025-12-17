@@ -52,6 +52,16 @@ export class AuthService {
       );
   }
 
+  register(email: string, password: string): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/register`, { email, password })
+      .pipe(
+        tap(response => {
+          this.setToken(response.token);
+          this.currentUserSubject.next(response.user);
+        })
+      );
+  }
+
   private loadCurrentUser(): void {
     if (!this.isLoggedIn) return;
 

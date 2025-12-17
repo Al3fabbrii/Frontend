@@ -7,7 +7,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'products', pathMatch: 'full' },
     {
         path: 'login',
-        loadComponent: () => import('./features/auth/login-page/login-page').then(m => m.LoginPage)
+        loadComponent: () => import('./features/auth/logging-page/logging-page').then(m => m.LoggingPage)
     },
     {
         path: 'products',
@@ -15,4 +15,8 @@ export const routes: Routes = [
     },
     { path: 'product/:id', component: ProductDetailPage },
     { path: 'checkout', component: CheckoutPage, canActivate: [authGuard] },
+    {
+        path: 'register',
+        loadComponent: () => import('./features/auth/register-page/register-page').then(m => m.RegisterPage)
+    }
 ];

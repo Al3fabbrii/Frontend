@@ -47,6 +47,8 @@ export class CheckoutPage {
   }
 
   showSummary = false;
+
+
   private cart = inject(CartService);
   private orderService = inject(OrderService);
   readonly items$ = this.cart.list();

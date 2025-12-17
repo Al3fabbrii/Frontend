@@ -1,1 +1,25 @@
-<p>register-page works!</p>
+<h1>Registrati</h1>
+<form [formGroup]="registerForm" (submit)="onSubmit()" class="form-container">
+    <mat-form-field class="form-group">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="user@example.com" />
+        @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+        <div class="error">Email non valida</div>
+        }
+    </mat-form-field>
+    <mat-form-field class="form-group">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Password" />
+        @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+        <div class="error">Password richiesta</div>
+        }
+        <img (click)="seePassword()" src="https://www.svgrepo.com/show/390427/eye-password-see-view.svg"
+            class="see-password" />
+    </mat-form-field>
+    @if (errorMessage) {
+    <div class="error-message">{{ errorMessage }}</div>
+    }
+    <button mat-raised-button type="submit" [disabled]="registerForm.invalid || isLoading" class="btn-primary">
+        {{ isLoading ? 'Registrazione in corso...' : 'Registrati' }}
+    </button>
+</form>

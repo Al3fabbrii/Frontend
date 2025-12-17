@@ -2,20 +2,26 @@
   <button matIconButton class="MenuButton" aria-label="Example icon-button with menu icon" (click)="goToHome()">
     <mat-icon>menu</mat-icon>
   </button>
+
+  @if (authService.isLoggedIn) {
+  <!-- Utente loggato: mostra bottone logout -->
+  <button matIconButton class="LogoutButton" aria-label="Logout button" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+  <button matIconButton class="UserAreaButton" aria-label="User area button" (click)="goToUserArea()">
+    <mat-icon>account_circle</mat-icon>
+  </button>
   <button matIconButton class="CartButton" aria-label="Example icon-button with checkout icon" (click)="goToCheckout()">
     <mat-icon>shopping_cart</mat-icon>
   </button>
-
-  @if (authService.isLoggedIn) {
-    <!-- Utente loggato: mostra bottone logout -->
-    <button matIconButton class="LogoutButton" aria-label="Logout button" (click)="logout()">
-      <mat-icon>logout</mat-icon>
-    </button>
   } @else {
-    <!-- Utente non loggato: mostra bottone login -->
-    <button matIconButton class="LoginButton" aria-label="Login button" (click)="goToLogin()">
-      <mat-icon>person</mat-icon>
-    </button>
+  <!-- Utente non loggato: mostra bottone login -->
+  <button matIconButton class="LoginButton" aria-label="Login button" (click)="goToLogin()">
+    <mat-icon>person</mat-icon>
+  </button>
+  <button matIconButton class="RegisterButton" aria-label="Register button" (click)="goToRegister()">
+    <mat-icon>person_add</mat-icon>
+  </button>
   }
 
   <span class="Title">Sito web esame Sistemi Web</span>

@@ -3,6 +3,9 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth-service';
 import { CommonModule } from '@angular/common';
+import { MatFormField } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
 
 
 @Component({
@@ -10,12 +13,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormField,
+    MatInputModule,
+    MatButtonModule
   ],
-  templateUrl: './login-page.html',
-  styleUrls: ['./login-page.scss'],
+  templateUrl: './logging-page.html',
+  styleUrls: ['./logging-page.scss'],
 })
-export class LoginPage {
+export class LoggingPage {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);

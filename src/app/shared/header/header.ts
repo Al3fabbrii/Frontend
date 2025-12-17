@@ -38,4 +38,11 @@ export class Header {
       }
     });
   }
+  goToRegister(): void {
+    this.router.navigate(['/register']);
+  }
+
+  goToUserArea(): void {
+
+  }
 }
