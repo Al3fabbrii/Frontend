@@ -8,12 +8,14 @@
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    gap: 5px;
 }
 
 .Title {
     color: black;
     font-weight: bold;
     font-size: 2em;
+    margin: auto;
 }
 
 mat-icon {

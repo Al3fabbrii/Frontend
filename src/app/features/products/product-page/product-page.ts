@@ -1,22 +1,25 @@
 import { Component, inject } from '@angular/core';
 import { ProductCard } from '../product-card/product-card';
 import { Product } from '../../../core/models/product';
-import { ProductApi } from '../../../core/services/product-api';
+import { ProductApi, ProductFilters } from '../../../core/services/product-api';
 import { CartService } from '../../../core/services/cart';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { AsyncPipe } from '@angular/common';
-import { BehaviorSubject, combineLatest, map, debounceTime, distinctUntilChanged, startWith } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { MatSelectModule } from '@angular/material/select';
 import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
 
 type Sort = 'priceAsc' | 'priceDesc' | 'dateAsc' | 'dateDesc';
-const cmp = (s: Sort) => (a: Product, b: Product) =>
-  s === 'priceAsc' ? a.price - b.price :
-    s === 'priceDesc' ? b.price - a.price :
-      s === 'dateAsc' ? a.createdAt.localeCompare(b.createdAt) :
-        b.createdAt.localeCompare(a.createdAt);
+
+// Mappa i valori frontend ai valori backend
+const sortMap: Record<Sort, 'price_asc' | 'price_desc' | 'date_asc' | 'date_desc'> = {
+  priceAsc: 'price_asc',
+  priceDesc: 'price_desc',
+  dateAsc: 'date_asc',
+  dateDesc: 'date_desc'
+};
 
 @Component({
   selector: 'app-product-page',
@@ -27,44 +30,32 @@ const cmp = (s: Sort) => (a: Product, b: Product) =>
 export class ProductPage {
   private service = inject(ProductApi);
   private cartService = inject(CartService);
-  protected readonly products$ = this.service.list();
-
 
   private filters$ = new BehaviorSubject({
     title: '',
     sort: 'dateDesc' as Sort,
     priceMin: '0',
     priceMax: '10000',
-  })
+  });
 
-  title$ = this.filters$.pipe(
-    map(f => f.title),
-    debounceTime(200),
-    distinctUntilChanged(),
-    startWith(this.filters$.value.title)
-  );
-
-  filteredProducts$ = combineLatest([
-    this.products$,
-    this.filters$,
-    this.title$
-  ]).pipe(
-    map(([products, filters, title]) => products.filter(product => {
-      const matchesTitle =
-        !title || product.title.toLowerCase().includes(title.toLowerCase());
-      const matchesPriceMin =
-        !filters.priceMin || product.price >= Number(filters.priceMin);
-      const matchesPriceMax =
-        !filters.priceMax || product.price <= Number(filters.priceMax);
-      return matchesTitle && matchesPriceMin && matchesPriceMax;
+  // Filtra i prodotti usando il backend
+  protected readonly products$ = this.filters$.pipe(
+    debounceTime(300), // Attendi 300ms dopo l'ultimo cambio prima di chiamare il backend
+    distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+    switchMap(filters => {
+      const backendFilters: ProductFilters = {
+        search: filters.title || undefined,
+        priceMin: filters.priceMin ? Number(filters.priceMin) : undefined,
+        priceMax: filters.priceMax ? Number(filters.priceMax) : undefined,
+        sort: sortMap[filters.sort]
+      };
+      return this.service.list(backendFilters);
     })
-      .toSorted(cmp(filters.sort))
-    )
   );
 
   page$ = new BehaviorSubject(1);
   pageSize = 10;
-  paged$ = combineLatest([this.filteredProducts$, this.page$]).pipe(
+  paged$ = combineLatest([this.products$, this.page$]).pipe(
     map(([items, page]) => {
       const start = (page - 1) * this.pageSize;
       const end = start + this.pageSize;

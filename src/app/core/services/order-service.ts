@@ -10,7 +10,13 @@ export class OrderService {
   http = inject(HttpClient);
   private readonly baseUrl = 'http://localhost:3000/api';
 
+  // Ottiene tutti gli ordini dell'utente corrente
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.baseUrl}/orders`);
+  }
+
+  // Crea un nuovo ordine
   create(order: Order): Observable<Order> {
-    return this.http.post<Order>(`${this.baseUrl}/orders`, order);
+    return this.http.post<Order>(`${this.baseUrl}/orders`, { order });
   }
 }

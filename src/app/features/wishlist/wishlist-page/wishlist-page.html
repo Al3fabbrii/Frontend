@@ -3,7 +3,7 @@
 
     @if (wishlistService.wishlist$ | async; as wishlist) {
     @if (wishlist.items.length === 0) {
-    <p>Lista dei preferiti vuota, aggiungi prodotti dalla homepage</p>
+    <p style="text-align: center;">Non ci sono prodotti salvati, aggiungi prodotti dalla homepage</p>
     } @else {
     <div class="wishlist-items">
         @for (item of wishlist.items; track item.id) {

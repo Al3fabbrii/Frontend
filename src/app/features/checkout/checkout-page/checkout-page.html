@@ -80,9 +80,32 @@
     <mat-checkbox formControlName="privacy" required>
         Accetto i termini e le condizioni
     </mat-checkbox>
-    <button mat-raised-button color="primary" type="submit">
+    <button mat-raised-button color="accent" type="submit" [disabled]="loading">
+        @if (loading) {
+        Elaborazione in corso...
+        } @else {
         Completa l'ordine
+        }
     </button>
+
+    @if (orderSuccess) {
+    <div class="success-message" role="status" aria-live="polite"
+        style="background-color: #4caf50; color: white; padding: 16px; margin-top: 16px; border-radius: 4px; text-align: center;">
+        <h3>✓ Ordine completato con successo!</h3>
+        <p>Il tuo ordine è stato registrato correttamente.</p>
+        <button mat-raised-button color="primary" [routerLink]="['/user-area']" style="margin-top: 8px;">
+            Visualizza i tuoi ordini
+        </button>
+    </div>
+    }
+
+    @if (orderError) {
+    <div class="error-message" role="status" aria-live="polite"
+        style="background-color: #f44336; color: white; padding: 16px; margin-top: 16px; border-radius: 4px; text-align: center;">
+        <p>Si è verificato un errore durante la creazione dell'ordine. Riprova.</p>
+    </div>
+    }
+
     @if(form.invalid && showSummary)
     {
     <div class="error-summary" role="status" aria-live="polite">

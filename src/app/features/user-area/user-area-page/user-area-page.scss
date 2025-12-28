@@ -1,0 +1,83 @@
+.user-area-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .user-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+
+    h2 {
+      margin: 0;
+      color: #1976d2;
+    }
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .order-card {
+      mat-card-header {
+        padding: 1rem;
+        margin: -16px -16px 16px -16px;
+      }
+
+      .order-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+          color: #1976d2;
+        }
+
+        p {
+          margin: 0.25rem 0;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+
+        .total-info {
+          grid-column: 1 / -1;
+          text-align: right;
+          padding-top: 1rem;
+          border-top: 2px solid #1976d2;
+
+          h3 {
+            font-size: 1.5rem;
+            color: #1976d2;
+          }
+        }
+      }
+    }
+  }
+}

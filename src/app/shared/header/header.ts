@@ -49,6 +49,6 @@ export class Header {
   }
 
   goToUserArea(): void {
-
+    this.router.navigate(['/user-area']);
   }
 }

@@ -12,10 +12,12 @@ import { map } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
 import { Order } from '../../../core/models/order';
 import { CartItem } from '../../../core/models/cart';
+import { MatButtonModule } from "@angular/material/button";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-page',
-  imports: [CommonModule, ReactiveFormsModule, MatSelect, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatOption],
+  imports: [CommonModule, ReactiveFormsModule, MatSelect, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatOption, MatButtonModule, RouterLink],
   templateUrl: './checkout-page.html',
   styleUrl: './checkout-page.scss',
 })
@@ -81,8 +83,16 @@ export class CheckoutPage implements OnInit {
     const value = this.form.getRawValue();
     this.items$.pipe(take(1)).subscribe((items: CartItem[]) => {
       const order: Order = {
-        customer: value.customer!,
-        address: value.address!,
+        customer: {
+          firstName: value.customer!.firstName!,
+          lastName: value.customer!.lastName!,
+          email: value.customer!.email!
+        },
+        address: {
+          street: value.address!.street!,
+          city: value.address!.city!,
+          zip: value.address!.zip!
+        },
         items: items.map(item => item.product),
         total: items.reduce(
           (sum: number, it: CartItem) => sum + it.subtotal, 0),
@@ -93,6 +103,8 @@ export class CheckoutPage implements OnInit {
           this.loading = false;
           this.orderSuccess = true;
           this.form.reset();
+          // Ricarica il carrello (il backend lo ha svuotato)
+          this.cart.loadCart().subscribe();
         },
         error: () => {
           this.loading = false;
