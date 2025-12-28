@@ -44,6 +44,9 @@ export class Header {
   goToCart(): void {
     this.router.navigate(['/cart']);
   }
+  goToWishlist(): void {
+    this.router.navigate(['/wishlist']);
+  }
 
   goToUserArea(): void {
 

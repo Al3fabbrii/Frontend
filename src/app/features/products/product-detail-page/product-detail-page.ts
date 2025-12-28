@@ -6,6 +6,7 @@ import { CartService } from '../../../core/services/cart';
 import { Product } from '../../../core/models/product';
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { WishlistService } from '../../../core/services/wishlist';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -20,6 +21,7 @@ export class ProductDetailPage {
   private route = inject(ActivatedRoute);
   private svc = inject(ProductApi);
   private cartService = inject(CartService);
+  private wishlistService = inject(WishlistService);
 
   readonly product$ = this.route.paramMap.pipe(
     map(params => params.get('id') as string),
@@ -35,6 +37,18 @@ export class ProductDetailPage {
       error: (err) => {
         console.error('Error adding to cart:', err);
         alert('Errore durante l\'aggiunta al carrello. Assicurati di essere loggato.');
+      }
+    });
+  }
+  addToWishlist(product: Product) {
+    this.wishlistService.addItem(product.id.toString()).subscribe({
+      next: () => {
+        console.log(`✓ ${product.title} aggiunto ai preferiti`);
+        alert(`${product.title} aggiunto ai preferiti!`);
+      },
+      error: (err) => {
+        console.error('Error adding to wishlist:', err);
+        alert('Errore durante l\'aggiunta ai preferiti. Assicurati di essere loggato.');
       }
     });
   }

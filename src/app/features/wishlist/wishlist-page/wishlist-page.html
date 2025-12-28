@@ -1,0 +1,36 @@
+<div class="wishlist-container">
+    <h1>Lista dei prodotti preferiti</h1>
+
+    @if (wishlistService.wishlist$ | async; as wishlist) {
+    @if (wishlist.items.length === 0) {
+    <p>Lista dei preferiti vuota, aggiungi prodotti dalla homepage</p>
+    } @else {
+    <div class="wishlist-items">
+        @for (item of wishlist.items; track item.id) {
+        <mat-card>
+            <mat-card-content>
+                <div class="item-row">
+                    <img [src]="item.product.thumbnail" [alt]="item.product.title" />
+                    <div class="item-info">
+                        <h3>{{ item.product.title }}</h3>
+                        <p>{{ item.product.price | currency }}</p>
+                    </div>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" (click)="onAddToCart(item.product)">
+                            Aggiungi al carrello
+                        </button>
+                        <button mat-raised-button color="primary" [routerLink]="['/product', item.product.id]">
+                            Visualizza dettagli
+                        </button>
+                        <button mat-icon-button color="warn" (click)="removeItem(item.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        }
+    </div>
+    }
+    }
+</div>

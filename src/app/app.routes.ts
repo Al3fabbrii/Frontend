@@ -19,5 +19,6 @@ export const routes: Routes = [
     {
         path: 'register',
         loadComponent: () => import('./features/auth/register-page/register-page').then(m => m.RegisterPage)
-    }
+    },
+    { path: 'wishlist', loadComponent: () => import('./features/wishlist/wishlist-page/wishlist-page').then(m => m.WishlistPage), canActivate: [authGuard] }
 ];

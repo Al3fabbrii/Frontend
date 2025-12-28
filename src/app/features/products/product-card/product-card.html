@@ -7,10 +7,14 @@
         <span>{{product.price | currency: 'EUR': 'symbol': '1.2-2'}}</span>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary" aria-label="Aggiungi al carrello" (click)="addToCart(product)">Aggiungi
+        <button mat-raised-button color="primary" aria-label="Aggiungi al carrello"
+            (click)="addToCart(product)">Aggiungi
             al carrello</button>
-        <button mat-flat-button color="primary" aria-label="Vai ai dettagli" [routerLink]="['/product', product.id]">
+        <button mat-raised-button color="primary" aria-label="Vai ai dettagli" [routerLink]="['/product', product.id]">
             Dettagli
+        </button>
+        <button mat-raised-button color="warn" aria-label="Aggiungi ai preferiti" (click)="addToWishlist(product)">
+            Aggiungi alla lista preferiti
         </button>
     </mat-card-actions>
 
