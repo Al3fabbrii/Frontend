@@ -7,5 +7,6 @@ export interface Product {
     sale: boolean;
     thumbnail?: string;
     tags?: string[];
+    stock: number;
     createdAt: string;
 }

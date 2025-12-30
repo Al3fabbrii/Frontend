@@ -36,7 +36,8 @@ export class ProductDetailPage {
       },
       error: (err) => {
         console.error('Error adding to cart:', err);
-        alert('Errore durante l\'aggiunta al carrello. Assicurati di essere loggato.');
+        const errorMsg = err.error?.error || 'Errore durante l\'aggiunta al carrello. Assicurati di essere loggato.';
+        alert(errorMsg);
       }
     });
   }

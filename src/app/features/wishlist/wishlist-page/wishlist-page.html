@@ -1,10 +1,11 @@
 <div class="wishlist-container">
-    <h1>Lista dei prodotti preferiti</h1>
+    <h1 i18n="@@wishlist-title">Lista dei prodotti preferiti</h1>
 
     @if (wishlistService.wishlist$ | async; as wishlist) {
     @if (wishlist.items.length === 0) {
-    <p style="text-align: center;">Non ci sono prodotti salvati, aggiungi prodotti dalla homepage</p>
-    <button mat-raised-button color="accent" [routerLink]="['/']">
+    <p style="text-align: center;" i18n="@@empty-wishlist">Non ci sono prodotti salvati, aggiungi prodotti dalla
+        homepage</p>
+    <button mat-raised-button color="accent" [routerLink]="['/']" i18n="@@back-to-home">
         Torna alla homepage
     </button>
     } @else {
@@ -19,13 +20,16 @@
                         <p>{{ item.product.price | currency }}</p>
                     </div>
                     <mat-card-actions>
-                        <button mat-raised-button color="primary" (click)="onAddToCart(item.product)">
+                        <button mat-raised-button color="primary" (click)="onAddToCart(item.product)"
+                            i18n="@@add-to-cart-wishlist">
                             Aggiungi al carrello
                         </button>
-                        <button mat-raised-button color="primary" [routerLink]="['/product', item.product.id]">
+                        <button mat-raised-button color="primary" [routerLink]="['/product', item.product.id]"
+                            i18n="@@view-details">
                             Visualizza dettagli
                         </button>
-                        <button mat-icon-button color="warn" (click)="removeItem(item.id)">
+                        <button mat-icon-button color="warn" (click)="removeItem(item.id)"
+                            i18n-aria-label="@@remove-item-aria" aria-label="Rimuovi">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </mat-card-actions>

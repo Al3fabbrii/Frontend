@@ -106,9 +106,12 @@ export class CheckoutPage implements OnInit {
           // Ricarica il carrello (il backend lo ha svuotato)
           this.cart.loadCart().subscribe();
         },
-        error: () => {
+        error: (err) => {
           this.loading = false;
           this.orderError = true;
+          console.error('Error creating order:', err);
+          const errorMsg = err.error?.error || 'Errore durante la creazione dell\'ordine';
+          alert(errorMsg);
         }
       });
     });

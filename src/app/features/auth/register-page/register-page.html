@@ -1,25 +1,28 @@
-<h1>Registrati</h1>
+<h1 i18n="@@register-title">Registrati</h1>
 <form [formGroup]="registerForm" (submit)="onSubmit()" class="form-container">
     <mat-form-field class="form-group">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" formControlName="email" placeholder="user@example.com" />
+        <mat-label i18n="@@email-label-register">Email</mat-label>
+        <input matInput type="email" formControlName="email" i18n-placeholder="@@email-placeholder-register"
+            placeholder="user@example.com" />
         @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
-        <div class="error">Email non valida</div>
+        <div class="error" i18n="@@email-invalid-register">Email non valida</div>
         }
     </mat-form-field>
     <mat-form-field class="form-group">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" placeholder="Password" />
+        <mat-label i18n="@@password-label-register">Password</mat-label>
+        <input matInput type="password" formControlName="password" i18n-placeholder="@@password-placeholder-register"
+            placeholder="Password" />
         @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
-        <div class="error">Password richiesta</div>
+        <div class="error" i18n="@@password-required-register">Password richiesta</div>
         }
         <img (click)="seePassword()" src="https://www.svgrepo.com/show/390427/eye-password-see-view.svg"
-            class="see-password" />
+            class="see-password" i18n-alt="@@show-password-alt-register" alt="Mostra password" />
     </mat-form-field>
     @if (errorMessage) {
     <div class="error-message">{{ errorMessage }}</div>
     }
-    <button mat-raised-button type="submit" [disabled]="registerForm.invalid || isLoading" class="btn-primary">
+    <button mat-raised-button type="submit" [disabled]="registerForm.invalid || isLoading" class="btn-primary"
+        i18n="@@register-button-submit">
         {{ isLoading ? 'Registrazione in corso...' : 'Registrati' }}
     </button>
 </form>

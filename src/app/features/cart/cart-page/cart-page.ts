@@ -30,11 +30,27 @@ export class CartPage implements OnInit {
   }
 
   increaseQuantity(item: any) {
-    this.cartService.updateItem(item.id, item.quantity + 1).subscribe();
+    this.cartService.updateItem(item.id, item.quantity + 1).subscribe({
+      error: (err) => {
+        console.error('Error updating quantity:', err);
+        const errorMsg = err.error?.error || 'Errore durante l\'aggiornamento della quantità';
+        alert(errorMsg);
+        // Ricarica il carrello per ripristinare lo stato corretto
+        this.cartService.loadCart().subscribe();
+      }
+    });
   }
   decreaseQuantity(item: any) {
     if (item.quantity > 1) {
-      this.cartService.updateItem(item.id, item.quantity - 1).subscribe();
+      this.cartService.updateItem(item.id, item.quantity - 1).subscribe({
+        error: (err) => {
+          console.error('Error updating quantity:', err);
+          const errorMsg = err.error?.error || 'Errore durante l\'aggiornamento della quantità';
+          alert(errorMsg);
+          // Ricarica il carrello per ripristinare lo stato corretto
+          this.cartService.loadCart().subscribe();
+        }
+      });
     }
   }
 

@@ -1,10 +1,10 @@
 <div class="cart-container">
-    <h1>Carrello</h1>
+    <h1 i18n>Carrello</h1>
 
     @if (cartService.cart$ | async; as cart) {
     @if (cart.items.length === 0) {
-    <p style="text-align: center;">Il carrello è vuoto, aggiungi prodotti dalla homepage</p>
-    <button mat-raised-button color="accent" [routerLink]="['/']">
+    <p style="text-align: center;" i18n>Il carrello è vuoto, aggiungi prodotti dalla homepage</p>
+    <button mat-raised-button color="accent" [routerLink]="['/']" i18n>
         Torna alla homepage
     </button>
     } @else {
@@ -41,8 +41,8 @@
 
     <mat-card class="cart-summary">
         <mat-card-content>
-            <h2>Totale: {{ cart.total | currency }}</h2>
-            <button mat-raised-button color="primary" (click)="goToCheckout()">
+            <h2 i18n>Totale: {{ cart.total | currency }}</h2>
+            <button mat-raised-button color="primary" (click)="goToCheckout()" i18n>
                 Procedi al Checkout
             </button>
         </mat-card-content>

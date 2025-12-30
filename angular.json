@@ -16,6 +16,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "it",
+        "locales": {
+          "en": {
+            "translation": "messages.en.xlf",
+            "baseHref": "/en/"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -31,7 +40,11 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "polyfills": [
+              "@angular/localize/init"
+            ],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -52,7 +65,14 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "localize": false
+            },
+            "it": {
+              "localize": ["it"]
+            },
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -65,6 +85,12 @@
             },
             "development": {
               "buildTarget": "flowboard:build:development"
+            },
+            "it": {
+              "buildTarget": "flowboard:build:it"
+            },
+            "en": {
+              "buildTarget": "flowboard:build:en"
             }
           },
           "defaultConfiguration": "development"

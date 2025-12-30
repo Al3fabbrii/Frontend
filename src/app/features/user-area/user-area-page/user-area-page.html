@@ -1,44 +1,45 @@
 <div class="user-area-container">
-    <h1>Area Utente</h1>
+    <h1 i18n="@@user-area-title">Area Utente</h1>
 
     @if (authService.currentUser$ | async; as user) {
     <div class="user-info">
-        <h2>Benvenuto, {{ user.email }}!</h2>
+        <h2 i18n="@@welcome-user">Benvenuto, {{ user.email }}!</h2>
     </div>
     }
 
-    <h2>I Miei Ordini</h2>
+    <h2 i18n="@@my-orders-title">I Miei Ordini</h2>
 
     @if (loading) {
-    <p style="text-align: center;">Caricamento ordini...</p>
+    <p style="text-align: center;" i18n="@@loading-orders">Caricamento ordini...</p>
     } @else if (error) {
-    <p style="text-align: center; color: red;">Errore nel caricamento degli ordini</p>
-    <button mat-raised-button color="primary" (click)="loadOrders()">Riprova</button>
+    <p style="text-align: center; color: red;" i18n="@@error-loading-orders">Errore nel caricamento degli ordini</p>
+    <button mat-raised-button color="primary" (click)="loadOrders()" i18n="@@retry-button">Riprova</button>
     } @else if (orders.length === 0) {
-    <p style="text-align: center;">Non hai ancora effettuato ordini</p>
-    <button mat-raised-button color="primary" [routerLink]="['/products']">Vai allo shop</button>
+    <p style="text-align: center;" i18n="@@no-orders">Non hai ancora effettuato ordini</p>
+    <button mat-raised-button color="primary" [routerLink]="['/products']" i18n="@@go-to-shop">Vai allo shop</button>
     } @else {
     <div class="orders-list">
         @for (order of orders; track order.id) {
         <mat-card class="order-card">
             <mat-card-header>
-                <mat-card-title>Ordine #{{ order.id }}</mat-card-title>
+                <mat-card-title i18n="@@order-number">Ordine #{{ order.id }}</mat-card-title>
                 <mat-card-subtitle>{{ order.createdAt | date:'dd/MM/yyyy HH:mm' }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
                 <div class="order-details">
                     <div class="customer-info">
-                        <h3>Informazioni Cliente</h3>
-                        <p><strong>Nome:</strong> {{ order.customer.firstName }} {{ order.customer.lastName }}</p>
-                        <p><strong>Email:</strong> {{ order.customer.email }}</p>
+                        <h3 i18n="@@customer-info-title">Informazioni Cliente</h3>
+                        <p><strong i18n="@@name-label">Nome:</strong> {{ order.customer.firstName }} {{
+                            order.customer.lastName }}</p>
+                        <p><strong i18n="@@email-label-order">Email:</strong> {{ order.customer.email }}</p>
                     </div>
                     <div class="address-info">
-                        <h3>Indirizzo di Spedizione</h3>
+                        <h3 i18n="@@shipping-address-title-order">Indirizzo di Spedizione</h3>
                         <p>{{ order.address.street }}</p>
                         <p>{{ order.address.zip }} {{ order.address.city }}</p>
                     </div>
                     <div class="items-info">
-                        <h3>Prodotti ({{ order.items.length }})</h3>
+                        <h3 i18n="@@products-title-order">Prodotti ({{ order.items.length }})</h3>
                         <ul>
                             @for (item of order.items; track $index) {
                             <li>
@@ -52,7 +53,7 @@
                         </ul>
                     </div>
                     <div class="total-info">
-                        <h3>Totale: {{ order.total | currency }}</h3>
+                        <h3 i18n="@@total-label-order">Totale: {{ order.total | currency }}</h3>
                     </div>
                 </div>
             </mat-card-content>

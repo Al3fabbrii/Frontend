@@ -13,7 +13,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-01-10T10:00:00.000Z"
+      "createdAt": "2025-01-10T10:00:00.000Z",
+      "stock": 97
     },
     {
       "id": "p-002",
@@ -28,7 +29,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-01-11T10:00:00.000Z"
+      "createdAt": "2025-01-11T10:00:00.000Z",
+      "stock": 85
     },
     {
       "id": "p-003",
@@ -43,7 +45,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-01-12T10:00:00.000Z"
+      "createdAt": "2025-01-12T10:00:00.000Z",
+      "stock": 19
     },
     {
       "id": "p-004",
@@ -58,7 +61,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-01-13T10:00:00.000Z"
+      "createdAt": "2025-01-13T10:00:00.000Z",
+      "stock": 11
     },
     {
       "id": "p-005",
@@ -73,7 +77,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-01-14T10:00:00.000Z"
+      "createdAt": "2025-01-14T10:00:00.000Z",
+      "stock": 83
     },
     {
       "id": "p-006",
@@ -88,7 +93,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-01-15T10:00:00.000Z"
+      "createdAt": "2025-01-15T10:00:00.000Z",
+      "stock": 65
     },
     {
       "id": "p-007",
@@ -102,7 +108,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-01-16T10:00:00.000Z"
+      "createdAt": "2025-01-16T10:00:00.000Z",
+      "stock": 82
     },
     {
       "id": "p-008",
@@ -116,7 +123,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-01-17T10:00:00.000Z"
+      "createdAt": "2025-01-17T10:00:00.000Z",
+      "stock": 99
     },
     {
       "id": "p-009",
@@ -131,7 +139,8 @@
         "periferiche",
         "meccanica"
       ],
-      "createdAt": "2025-01-18T10:00:00.000Z"
+      "createdAt": "2025-01-18T10:00:00.000Z",
+      "stock": 49
     },
     {
       "id": "p-010",
@@ -146,7 +155,8 @@
         "periferiche",
         "wireless"
       ],
-      "createdAt": "2025-01-19T10:00:00.000Z"
+      "createdAt": "2025-01-19T10:00:00.000Z",
+      "stock": 27
     },
     {
       "id": "p-011",
@@ -160,7 +170,8 @@
         "cuffie",
         "audio"
       ],
-      "createdAt": "2025-01-20T10:00:00.000Z"
+      "createdAt": "2025-01-20T10:00:00.000Z",
+      "stock": 62
     },
     {
       "id": "p-012",
@@ -174,7 +185,8 @@
         "cuffie",
         "audio"
       ],
-      "createdAt": "2025-01-21T10:00:00.000Z"
+      "createdAt": "2025-01-21T10:00:00.000Z",
+      "stock": 77
     },
     {
       "id": "p-013",
@@ -189,7 +201,8 @@
         "dock",
         "accessori"
       ],
-      "createdAt": "2025-01-22T10:00:00.000Z"
+      "createdAt": "2025-01-22T10:00:00.000Z",
+      "stock": 37
     },
     {
       "id": "p-014",
@@ -204,7 +217,8 @@
         "dock",
         "accessori"
       ],
-      "createdAt": "2025-01-23T10:00:00.000Z"
+      "createdAt": "2025-01-23T10:00:00.000Z",
+      "stock": 95
     },
     {
       "id": "p-015",
@@ -218,7 +232,8 @@
         "webcam",
         "videochiamate"
       ],
-      "createdAt": "2025-01-24T10:00:00.000Z"
+      "createdAt": "2025-01-24T10:00:00.000Z",
+      "stock": 45
     },
     {
       "id": "p-016",
@@ -232,7 +247,8 @@
         "webcam",
         "videochiamate"
       ],
-      "createdAt": "2025-01-25T10:00:00.000Z"
+      "createdAt": "2025-01-25T10:00:00.000Z",
+      "stock": 89
     },
     {
       "id": "p-017",
@@ -246,7 +262,8 @@
         "ufficio",
         "ergonomia"
       ],
-      "createdAt": "2025-01-26T10:00:00.000Z"
+      "createdAt": "2025-01-26T10:00:00.000Z",
+      "stock": 42
     },
     {
       "id": "p-018",
@@ -260,7 +277,8 @@
         "scrivania",
         "regolabile"
       ],
-      "createdAt": "2025-01-27T10:00:00.000Z"
+      "createdAt": "2025-01-27T10:00:00.000Z",
+      "stock": 69
     },
     {
       "id": "p-019",
@@ -275,7 +293,8 @@
         "regolabile",
         "illuminazione"
       ],
-      "createdAt": "2025-01-28T10:00:00.000Z"
+      "createdAt": "2025-01-28T10:00:00.000Z",
+      "stock": 58
     },
     {
       "id": "p-020",
@@ -290,7 +309,8 @@
         "trasporto",
         "laptop"
       ],
-      "createdAt": "2025-01-29T10:00:00.000Z"
+      "createdAt": "2025-01-29T10:00:00.000Z",
+      "stock": 92
     },
     {
       "id": "p-021",
@@ -305,7 +325,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-01-30T10:00:00.000Z"
+      "createdAt": "2025-01-30T10:00:00.000Z",
+      "stock": 60
     },
     {
       "id": "p-022",
@@ -320,7 +341,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-01-31T10:00:00.000Z"
+      "createdAt": "2025-01-31T10:00:00.000Z",
+      "stock": 86
     },
     {
       "id": "p-023",
@@ -335,7 +357,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-02-01T10:00:00.000Z"
+      "createdAt": "2025-02-01T10:00:00.000Z",
+      "stock": 80
     },
     {
       "id": "p-024",
@@ -350,7 +373,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-02T10:00:00.000Z"
+      "createdAt": "2025-02-02T10:00:00.000Z",
+      "stock": 15
     },
     {
       "id": "p-025",
@@ -365,7 +389,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-03T10:00:00.000Z"
+      "createdAt": "2025-02-03T10:00:00.000Z",
+      "stock": 68
     },
     {
       "id": "p-026",
@@ -380,7 +405,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-04T10:00:00.000Z"
+      "createdAt": "2025-02-04T10:00:00.000Z",
+      "stock": 25
     },
     {
       "id": "p-027",
@@ -394,7 +420,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-02-05T10:00:00.000Z"
+      "createdAt": "2025-02-05T10:00:00.000Z",
+      "stock": 98
     },
     {
       "id": "p-028",
@@ -408,7 +435,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-02-06T10:00:00.000Z"
+      "createdAt": "2025-02-06T10:00:00.000Z",
+      "stock": 75
     },
     {
       "id": "p-029",
@@ -423,7 +451,8 @@
         "periferiche",
         "meccanica"
       ],
-      "createdAt": "2025-02-07T10:00:00.000Z"
+      "createdAt": "2025-02-07T10:00:00.000Z",
+      "stock": 68
     },
     {
       "id": "p-030",
@@ -438,7 +467,8 @@
         "periferiche",
         "wireless"
       ],
-      "createdAt": "2025-02-08T10:00:00.000Z"
+      "createdAt": "2025-02-08T10:00:00.000Z",
+      "stock": 57
     },
     {
       "id": "p-031",
@@ -452,7 +482,8 @@
         "cuffie",
         "audio"
       ],
-      "createdAt": "2025-02-09T10:00:00.000Z"
+      "createdAt": "2025-02-09T10:00:00.000Z",
+      "stock": 19
     },
     {
       "id": "p-032",
@@ -466,7 +497,8 @@
         "cuffie",
         "audio"
       ],
-      "createdAt": "2025-02-10T10:00:00.000Z"
+      "createdAt": "2025-02-10T10:00:00.000Z",
+      "stock": 21
     },
     {
       "id": "p-033",
@@ -481,7 +513,8 @@
         "dock",
         "accessori"
       ],
-      "createdAt": "2025-02-11T10:00:00.000Z"
+      "createdAt": "2025-02-11T10:00:00.000Z",
+      "stock": 51
     },
     {
       "id": "p-034",
@@ -496,7 +529,8 @@
         "dock",
         "accessori"
       ],
-      "createdAt": "2025-02-12T10:00:00.000Z"
+      "createdAt": "2025-02-12T10:00:00.000Z",
+      "stock": 28
     },
     {
       "id": "p-035",
@@ -510,7 +544,8 @@
         "webcam",
         "videochiamate"
       ],
-      "createdAt": "2025-02-13T10:00:00.000Z"
+      "createdAt": "2025-02-13T10:00:00.000Z",
+      "stock": 56
     },
     {
       "id": "p-036",
@@ -524,7 +559,8 @@
         "webcam",
         "videochiamate"
       ],
-      "createdAt": "2025-02-14T10:00:00.000Z"
+      "createdAt": "2025-02-14T10:00:00.000Z",
+      "stock": 87
     },
     {
       "id": "p-037",
@@ -538,7 +574,8 @@
         "ufficio",
         "ergonomia"
       ],
-      "createdAt": "2025-02-15T10:00:00.000Z"
+      "createdAt": "2025-02-15T10:00:00.000Z",
+      "stock": 94
     },
     {
       "id": "p-038",
@@ -552,7 +589,8 @@
         "scrivania",
         "regolabile"
       ],
-      "createdAt": "2025-02-16T10:00:00.000Z"
+      "createdAt": "2025-02-16T10:00:00.000Z",
+      "stock": 73
     },
     {
       "id": "p-039",
@@ -567,7 +605,8 @@
         "regolabile",
         "illuminazione"
       ],
-      "createdAt": "2025-02-17T10:00:00.000Z"
+      "createdAt": "2025-02-17T10:00:00.000Z",
+      "stock": 95
     },
     {
       "id": "p-040",
@@ -582,7 +621,8 @@
         "trasporto",
         "laptop"
       ],
-      "createdAt": "2025-02-18T10:00:00.000Z"
+      "createdAt": "2025-02-18T10:00:00.000Z",
+      "stock": 88
     },
     {
       "id": "p-041",
@@ -597,7 +637,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-02-19T10:00:00.000Z"
+      "createdAt": "2025-02-19T10:00:00.000Z",
+      "stock": 10
     },
     {
       "id": "p-042",
@@ -612,7 +653,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-02-20T10:00:00.000Z"
+      "createdAt": "2025-02-20T10:00:00.000Z",
+      "stock": 38
     },
     {
       "id": "p-043",
@@ -627,7 +669,8 @@
         "notebook",
         "portatile"
       ],
-      "createdAt": "2025-02-21T10:00:00.000Z"
+      "createdAt": "2025-02-21T10:00:00.000Z",
+      "stock": 16
     },
     {
       "id": "p-044",
@@ -642,7 +685,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-22T10:00:00.000Z"
+      "createdAt": "2025-02-22T10:00:00.000Z",
+      "stock": 43
     },
     {
       "id": "p-045",
@@ -657,7 +701,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-23T10:00:00.000Z"
+      "createdAt": "2025-02-23T10:00:00.000Z",
+      "stock": 28
     },
     {
       "id": "p-046",
@@ -672,7 +717,8 @@
         "display",
         "schermo"
       ],
-      "createdAt": "2025-02-24T10:00:00.000Z"
+      "createdAt": "2025-02-24T10:00:00.000Z",
+      "stock": 67
     },
     {
       "id": "p-047",
@@ -686,7 +732,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-02-25T10:00:00.000Z"
+      "createdAt": "2025-02-25T10:00:00.000Z",
+      "stock": 62
     },
     {
       "id": "p-048",
@@ -700,7 +747,8 @@
         "mouse",
         "periferiche"
       ],
-      "createdAt": "2025-02-26T10:00:00.000Z"
+      "createdAt": "2025-02-26T10:00:00.000Z",
+      "stock": 59
     },
     {
       "id": "p-049",
@@ -715,7 +763,8 @@
         "periferiche",
         "meccanica"
       ],
-      "createdAt": "2025-02-27T10:00:00.000Z"
+      "createdAt": "2025-02-27T10:00:00.000Z",
+      "stock": 32
     },
     {
       "id": "p-050",
@@ -730,7 +779,8 @@
         "periferiche",
         "wireless"
       ],
-      "createdAt": "2025-02-28T10:00:00.000Z"
+      "createdAt": "2025-02-28T10:00:00.000Z",
+      "stock": 20
     }
   ],
   "orders": [

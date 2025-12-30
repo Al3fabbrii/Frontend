@@ -1,86 +1,86 @@
 <form class="checkout-form" [formGroup]="form" (submit)="onSubmit()">
     <section formGroupName="customer">
-        <h2>Dati cliente</h2>
+        <h2 i18n>Dati cliente</h2>
         <mat-form-field appearance="outline">
-            <mat-label>Nome</mat-label>
+            <mat-label i18n>Nome</mat-label>
             <input matInput formControlName="firstName" required>
             @if(hasError('customer.firstName','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 Il nome è obbligatorio
             </mat-error>}
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Cognome</mat-label>
+            <mat-label i18n>Cognome</mat-label>
             <input matInput formControlName="lastName" required>
             @if(hasError('customer.lastName','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 Il cognome è obbligatorio
             </mat-error>}
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
+            <mat-label i18n>Email</mat-label>
             <input matInput formControlName="email" required type="email">
             @if(hasError('customer.email','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 L'email è obbligatoria
             </mat-error>}
             @if(hasError('customer.email','email'))
             {
-            <mat-error>
+            <mat-error i18n>
                 Inserisci un'email valida
             </mat-error>}
         </mat-form-field>
     </section>
 
     <section formGroupName="address">
-        <h2>Indirizzo</h2>
+        <h2 i18n>Indirizzo</h2>
         <mat-form-field appearance="outline">
-            <mat-label>Via</mat-label>
+            <mat-label i18n>Via</mat-label>
             <input matInput formControlName="street" required>
             @if(hasError('address.street','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 La via è obbligatoria
             </mat-error>}
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Città</mat-label>
+            <mat-label i18n>Città</mat-label>
             <input matInput formControlName="city" required>
             @if(hasError('address.city','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 La città è obbligatoria
             </mat-error>}
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>CAP</mat-label>
+            <mat-label i18n>CAP</mat-label>
             <input matInput formControlName="zip" required>
             @if(hasError('address.zip','required'))
             {
-            <mat-error>
+            <mat-error i18n>
                 Il CAP è obbligatorio
             </mat-error>}
             @if(hasError('address.zip','pattern'))
             {
-            <mat-error>
+            <mat-error i18n>
                 Inserisci un CAP valido
             </mat-error>}
         </mat-form-field>
     </section>
 
 
-    <h2>Metodo di spedizione</h2>
+    <h2 i18n>Metodo di spedizione</h2>
     <mat-select formControlName="shippingMethod" required>
-        <mat-option value="standard">Standard</mat-option>
-        <mat-option value="express">Express</mat-option>
+        <mat-option value="standard" i18n>Standard</mat-option>
+        <mat-option value="express" i18n>Express</mat-option>
     </mat-select>
-    <mat-checkbox formControlName="privacy" required>
+    <mat-checkbox formControlName="privacy" required i18n>
         Accetto i termini e le condizioni
     </mat-checkbox>
-    <button mat-raised-button color="accent" type="submit" [disabled]="loading">
+    <button mat-raised-button color="accent" type="submit" [disabled]="loading" i18n>
         @if (loading) {
         Elaborazione in corso...
         } @else {
@@ -91,9 +91,9 @@
     @if (orderSuccess) {
     <div class="success-message" role="status" aria-live="polite"
         style="background-color: #4caf50; color: white; padding: 16px; margin-top: 16px; border-radius: 4px; text-align: center;">
-        <h3>✓ Ordine completato con successo!</h3>
-        <p>Il tuo ordine è stato registrato correttamente.</p>
-        <button mat-raised-button color="primary" [routerLink]="['/user-area']" style="margin-top: 8px;">
+        <h3 i18n>✓ Ordine completato con successo!</h3>
+        <p i18n>Il tuo ordine è stato registrato correttamente.</p>
+        <button mat-raised-button color="primary" [routerLink]="['/user-area']" style="margin-top: 8px;" i18n>
             Visualizza i tuoi ordini
         </button>
     </div>
@@ -102,14 +102,14 @@
     @if (orderError) {
     <div class="error-message" role="status" aria-live="polite"
         style="background-color: #f44336; color: white; padding: 16px; margin-top: 16px; border-radius: 4px; text-align: center;">
-        <p>Si è verificato un errore durante la creazione dell'ordine. Riprova.</p>
+        <p i18n>Si è verificato un errore durante la creazione dell'ordine. Riprova.</p>
     </div>
     }
 
     @if(form.invalid && showSummary)
     {
     <div class="error-summary" role="status" aria-live="polite">
-        <p>
+        <p i18n>
             Il form contiene errori. Controlla i campi evidenziati.
         </p>
     </div>}
